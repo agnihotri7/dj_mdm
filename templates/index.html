@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+  <main role="main">
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <h1>Welcome to Mobile Device Management Server!</h1>
+      <p class="lead">Download mobileconfig from below link to enroll in mdm.</p>
+    </div>
+
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Enroll MDM</h2>
+        <p>Download and Install MDM profile form here to start using the app.</p>
+        <p><a class="" href="{% url 'enroll' %}" role="button">Install MDM profile</a></p>
+      </div>
+      <div class="col-lg-6">
+        <h2>Download CA Cert</h2>
+        <p>Download and Install CA Cert form here to start using the app.</p>
+        <p><a class="" href="{% url 'ssl-cert' %}" role="button">Install CA Cert</a></p>
+      </div>
+    </div>
+  </main>
+{% endblock %}

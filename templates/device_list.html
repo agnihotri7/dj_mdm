@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Devices {% endblock %}
+
+{% block content %}
+  <main role="main">
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <h1>Device List</h1>
+      <p class="lead">Devices registered with MDM.</p>
+      <ul>
+          {% for device in devices %}
+            <li>
+              <p>{{ device.id }}: <a href="/mdm/devices/{{device.id}}/">{{ device.udid }}</a></p>
+            </li>
+          {% endfor %}
+      </ul>
+    </div>
+  </main>
+{% endblock %}
