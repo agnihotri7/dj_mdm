@@ -1,0 +1,2 @@
+Django==1.11
+APNSWrapper==0.6.1
