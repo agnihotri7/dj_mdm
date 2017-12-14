@@ -1,4 +1,4 @@
-DJ_MDM
+dj_mdm
 =======
 
 # Overview
@@ -12,6 +12,13 @@ The project aims for setting up a simple iOS Mobile Device Management Server(MDM
     git clone https://github.com/agnihotri7/dj_mdm.git dj_mdm
 
 ## Configure It
+
+    # update required files
+    replace dj_mdm/hideApps.txt, dj_mdm/unhideApps.txt, dj_mdm/server-ssl.csr, dj_mdm/apnsCert.pem with your own certificates
+Follow steps given in the [link](https://github.com/project-imas/mdm-server/blob/master/README.md) to get required Certificates to run MDM Server.
+
+    # install requirements.txt under your virtual env.
+    pip install -r requirements.txt
 
     # migrate database
     ./manage.py migrate
