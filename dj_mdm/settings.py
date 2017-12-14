@@ -117,12 +117,27 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "static"),
 ]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+# media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# mdm apns settings
+APNS_CERT = os.path.join(BASE_DIR, 'apnsCert.pem')
+
+PUSH_NOTIFICATIONS_SETTINGS = {
+        "FCM_API_KEY": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", # your api key
+        # "GCM_API_KEY": "[your api key]",
+        "APNS_CERTIFICATE": APNS_CERT,
+        "APN_HOST" : "gateway.push.apple.com",
+        "APNS_PORT": 2195,
+        "APNS_TOPIC" : "com.dev.myapp", # your ios app/package name
+        "APNS_USE_ALTERNATIVE_PORT" : 2197,
+        "APNS_USE_SANDBOX" : 'api.push.apple.com',
+
+}
