@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %} Devices {% endblock %}
+
+{% block content %}
+  <main role="main">
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <h1>Device Detail</h1>
+      <p class="lead">Devices registered with MDM.</p>
+      <form action="." id="cpmmandform" method="POST">
+        {% csrf_token %}
+        Command:<select name="commandList" form="cpmmandform">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+        <button type="submit">Submit</button>
+        <a href="{% url 'device-detail' device.id %}">Refresh</a>
+      </form>
+
+      <ul>
+          {% for command in commands %}
+            <li>
+              <p><b>UUID:</b> {{ command.uuid }}, <b>Status:</b>  {{ command.get_status_display }} </p>
+            </li>
+          {% endfor %}
+      </ul>
+    </div>
+  </main>
+{% endblock %}
